@@ -13,7 +13,7 @@ class Hyperparameters:
 
     # training
     batch_size = 128
-    num_epochs = 80
+    num_epochs = 100
     dropout_rate = 0.5
     patience = 10 # early stopping
 
@@ -23,14 +23,15 @@ class Hyperparameters:
     # all_train = True
 
     # network variants
-    net_variant = 'birnn_concat_time_delta'
+    # net_variant = 'birnn_concat_time_delta_100'
     # net_variant = 'birnn_concat_time_delta_attention'
     # net_variant = 'birnn_time_decay'#
     # net_variant = 'birnn_time_decay_attention'#
-    # net_variant = 'ode_birnn'#
+    net_variant = 'ode_birnn_100'
     # net_variant = 'ode_birnn_attention'#
-    # net_variant = 'ode_attention'#
+    # net_variant = 'ode_attention'
     # net_variant = 'attention_concat_time'
+    # net_variant = 'attention_concat_time_100'
     # net_variant = 'birnn_ode_decay'#
     # net_variant = 'birnn_ode_decay_attention'#
     # net_variant = 'mce_attention'#

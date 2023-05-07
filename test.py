@@ -18,6 +18,7 @@ from pdb import set_trace as bp
 def round(num):
     return np.round(num*1000)/1000
 
+
 if __name__ == '__main__':
     # Load data
     print('Load data...')
@@ -40,7 +41,9 @@ if __name__ == '__main__':
 
     # Network
     # net = Attention_ConcatTime(num_static, num_dp_codes, num_cp_codes).to(device)
-    net = RNN_ConcatTime(num_static, num_dp_codes, num_cp_codes).to(device)
+    # net = RNN_ConcatTime(num_static, num_dp_codes, num_cp_codes).to(device)
+    net = ODE_RNN(num_static, num_dp_codes, num_cp_codes).to(device)
+    # net = ODE_Attention(num_static, num_dp_codes, num_cp_codes).to(device)
 
     print('Evaluate...')
     # Set log dir to read trained model from

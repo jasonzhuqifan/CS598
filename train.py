@@ -38,8 +38,9 @@ if __name__ == '__main__':
 
     # Network
     # net = Attention_ConcatTime(num_static, num_dp_codes, num_cp_codes).to(device)
-
-    net = RNN_ConcatTime(num_static, num_dp_codes, num_cp_codes).to(device)
+    # net = RNN_ConcatTime(num_static, num_dp_codes, num_cp_codes).to(device)
+    net = ODE_RNN(num_static, num_dp_codes, num_cp_codes).to(device)
+    # net = ODE_Attention(num_static, num_dp_codes, num_cp_codes).to(device)
 
     # Loss function and optimizer
     criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight).to(device)
@@ -55,8 +56,8 @@ if __name__ == '__main__':
 
     # Train
     for epoch in tqdm(range(hp.num_epochs)):
-        # print('-----------------------------------------')
-        # print('Epoch: {}'.format(epoch))
+        print('-----------------------------------------')
+        print('Epoch: {}'.format(epoch))
         net.train()
         time_start = time()
         for i, (stat, dp, cp, dp_t, cp_t, label) in enumerate(tqdm(trainloader), 0):
